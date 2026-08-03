@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci pour votre commande — LogIQ Consulting</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">LogIQ <span>Consultant</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Commande confirmée</p>
+        <h1>Merci pour votre commande !</h1>
+        <p class="hero-sub">
+          Votre paiement a bien été reçu. Vous allez recevoir un e-mail sous peu avec un questionnaire pour
+          démarrer la préparation de votre business plan. En attendant, vous pouvez me contacter directement
+          si vous avez une question.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" href="mailto:syn4ps7@gmail.com?subject=Suite%20de%20ma%20commande%20business%20plan">
+            Contacter LogIQ Consulting
+          </a>
+          <a class="btn btn-ghost btn-large" href="index.html">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> LogIQ Consulting. Tous droits réservés.</p>
+      <p><a href="mailto:syn4ps7@gmail.com">syn4ps7@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
