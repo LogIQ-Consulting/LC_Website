@@ -17,22 +17,23 @@ Tarification : offre de lancement à 270.– CHF TTC (TVA 8.1% incluse) pendant 
 
 ## Configurer le paiement Stripe (obligatoire avant mise en ligne)
 
-⚠️ Le site affiche désormais des prix **TTC arrondis** (270.– / 540.– CHF), différents du lien Stripe actuel
-(`buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00`) qui facture 250.00 CHF sans taxe. Il faut créer un nouveau Payment
-Link à 270 CHF pour que le montant facturé corresponde au prix annoncé.
+✅ Le lien de lancement est en place (`buy.stripe.com/3cI28t3JraVl23r8552Ry01`), confirmé à 270,00 CHF —
+montant total dû qui correspond bien au prix affiché sur le site.
+
+Note : ce Payment Link ne détaille pas la TVA (taxe à 0,00 CHF, 270 CHF considéré comme prix final). Si tu es
+effectivement assujetti à la TVA suisse et veux que Stripe l'isole pour ta comptabilité, attache un taux de
+taxe de 8.1 % **en mode "TVA incluse" (inclusive)** au prix — Dashboard Stripe → Produits → ce prix →
+Paramètres → Fiscalité → Taux de taxe. Le montant facturé au client (270 CHF) ne change pas, seule la
+répartition HT/TVA apparaît dans tes justificatifs. Vérifie ce point avec ton fiduciaire.
+
+Reste à faire : le second Payment Link pour le tarif normal.
 
 1. Dashboard Stripe → **Payment links** → **Create payment link**.
-2. Crée un produit "Business plan clé en main — offre de lancement" à **270 CHF**, devise **CHF**, paiement
-   unique. Si tu es effectivement assujetti à la TVA suisse, attache un taux de taxe de 8.1 % **en mode
-   "TVA incluse" (inclusive)** — Paramètres → Fiscalité → Taux de taxe — pour que 270 CHF reste le montant
-   total facturé (pas 270 + taxe en plus). Si tu n'es pas encore assujetti (franchise en base), ne mets pas
-   de taxe : 270 CHF est alors simplement le prix final.
+2. Crée un produit "Business plan clé en main — tarif normal" à **540 CHF**, devise **CHF**, paiement unique
+   (même logique de taxe que ci-dessus).
 3. Configure la redirection après paiement vers `https://logiq-consulting.ch/merci.html` (onglet "After payment").
-4. Copie l'URL générée, ouvre `index.html`, cherche `REMPLACER_PAR_TON_LIEN_270CHF` (section Tarif) et remplace
-   le `href` par cette URL.
-5. Fais la même chose pour le tarif normal à **540 CHF** (même logique de taxe incluse). À la fin du mois de
-   lancement (après le 3 septembre 2026), remplace le lien du bouton par celui-ci et mets à jour le texte
-   "270.– CHF" / la date dans la section Tarif.
+4. Copie l'URL générée. À la fin du mois de lancement (après le 3 septembre 2026), remplace dans `index.html`
+   le lien du bouton par celui-ci et mets à jour le texte "270.– CHF" / la date dans la section Tarif.
 
 ## Configurer le formulaire de brief (obligatoire avant mise en ligne)
 
