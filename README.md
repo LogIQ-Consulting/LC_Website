@@ -17,20 +17,24 @@ Tarification : offre de lancement à 250 CHF HT pendant le premier mois, puis
 
 ## Configurer le paiement Stripe (obligatoire avant mise en ligne)
 
-⚠️ Le lien actuellement en ligne (`buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00`) a été créé en **EUR**. Stripe ne
-permet pas de changer la devise d'un Payment Link existant : il faut en recréer un neuf en CHF.
+Le lien actuellement en ligne (`buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00`) est bien en **CHF**, montant 250.00 CHF.
 
-1. Crée un compte sur [stripe.com](https://dashboard.stripe.com/register) si tu n'en as pas déjà un.
-2. Dans le Dashboard Stripe → **Payment links** → **Create payment link**.
-3. Crée un produit "Business plan clé en main" à **250 CHF HT**, devise **CHF**, paiement unique (offre de
-   lancement du 1er mois).
-4. Dans les options du lien, configure la page de redirection après paiement vers
-   `https://logiq-consulting.ch/merci.html` (onglet "After payment").
-5. Copie l'URL du lien généré (`https://buy.stripe.com/...`).
-6. Ouvre `index.html`, cherche `buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00` (dans la section Tarif) et remplace le
-   `href` par ta nouvelle URL en CHF.
-7. Crée un second Payment Link à **500 CHF HT** pour le tarif normal. À la fin du mois de lancement, remplace le
-   lien du bouton par celui-ci, et mets à jour le texte "250 CHF HT" / la date dans la section Tarif de `index.html`.
+⚠️ **Il manque la TVA suisse (8.1 %) sur ce Payment Link** : le checkout affiche actuellement "Taxe : 0,00 CHF",
+alors que le site annonce "250 CHF **HT**" (donc TVA en plus). Deux options :
+
+- Dashboard Stripe → **Produits**, ouvre le prix associé à ce Payment Link, et attache un taux de taxe de
+  8.1 % (Paramètres → Fiscalité → Taux de taxe, à créer si pas déjà fait) ; ou
+- Si tu n'es pas encore effectivement assujetti à la TVA suisse (franchise en base), retire la mention "HT"
+  du site et des CGV et considère 250 CHF comme prix final TTC — vérifie ce point avec ton fiduciaire.
+
+Pour le second Payment Link (tarif normal) :
+
+1. Dashboard Stripe → **Payment links** → **Create payment link**.
+2. Crée un produit "Business plan clé en main" à **500 CHF HT**, devise **CHF**, paiement unique, avec le même
+   taux de taxe 8.1 % attaché.
+3. Configure la redirection après paiement vers `https://logiq-consulting.ch/merci.html` (onglet "After payment").
+4. À la fin du mois de lancement (après le 3 septembre 2026), remplace le lien du bouton dans `index.html` par
+   celui-ci, et mets à jour le texte "250 CHF HT" / la date dans la section Tarif.
 
 ## Configurer le formulaire de brief (obligatoire avant mise en ligne)
 
