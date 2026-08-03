@@ -19,7 +19,7 @@ Tarification : offre de lancement à 250€ HT pendant le premier mois, puis
 2. Dans le Dashboard Stripe → **Payment links** → **Create payment link**.
 3. Crée un produit "Business plan clé en main" à **250€ HT**, paiement unique (offre de lancement du 1er mois).
 4. Dans les options du lien, configure la page de redirection après paiement vers
-   `https://TON-DOMAINE/merci.html` (onglet "After payment").
+   `https://logiq-consulting.ch/merci.html` (onglet "After payment").
 5. Copie l'URL du lien généré (`https://buy.stripe.com/...`).
 6. Ouvre `index.html`, cherche `REMPLACER_PAR_TON_LIEN` (dans la section Tarif) et remplace le `href` par ton URL.
 7. Crée un second Payment Link à **500€ HT** pour le tarif normal. À la fin du mois de lancement, remplace le
