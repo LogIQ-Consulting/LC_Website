@@ -37,5 +37,5 @@ Aucune étape de build n'est nécessaire : ce sont des fichiers statiques.
 ## Personnalisation
 
 - Couleurs et espacements : variables CSS en haut de `styles.css` (`:root`).
-- Adresse e-mail de contact : remplacer `syn4ps7@gmail.com` dans `index.html`, `merci.html`.
+- Adresse e-mail de contact : `contact@logiq-consulting.ch`, présente dans `index.html`, `merci.html` et `cgv.html`.
 - Textes (offre, FAQ, à propos) : directement dans `index.html`.
