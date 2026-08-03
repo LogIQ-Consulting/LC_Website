@@ -754,3 +754,151 @@ a {
     position: static;
   }
 }
+
+/* Brief form */
+.form-shell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.form-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-legend {
+  padding: 0 0 var(--space-2);
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  margin-bottom: var(--space-2);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.form-label .optional {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-3);
+  min-height: 44px;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.form-input:focus-visible,
+.form-select:focus-visible,
+.form-textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 1px;
+  border-color: var(--gold);
+}
+
+.form-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--gold-soft);
+  border-radius: 10px;
+  padding: var(--space-4);
+}
+
+.form-checkbox-row input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  margin-top: 2px;
+  accent-color: var(--navy);
+}
+
+.form-checkbox-row label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.form-status {
+  display: none;
+  border-radius: 10px;
+  padding: var(--space-4);
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.form-status.success {
+  background: #e4f3e8;
+  color: #1f6b3a;
+}
+
+.form-status.error {
+  background: #fbe6e6;
+  color: #a12626;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: var(--space-4);
+  }
+}

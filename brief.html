@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brief de votre projet — LogIQ Consulting</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">LogIQ <span>Consulting</span></a>
+      <nav class="primary-nav" id="primaryNav">
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section legal-hero">
+      <div class="container">
+        <p class="eyebrow">Étape suivante</p>
+        <h1 class="legal-title">Le brief de votre projet</h1>
+        <p class="section-lead">
+          Ces informations nous permettent de rédiger un business plan précis et adapté à votre situation.
+          Comptez environ 10 minutes. Vous pourrez toujours nous transmettre des documents complémentaires
+          par e-mail ensuite.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container form-shell">
+
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+        <form id="briefForm" class="form-card" action="https://api.web3forms.com/submit" method="POST">
+          <!--
+            REMPLACER CETTE CLÉ :
+            Crée un compte gratuit sur https://web3forms.com avec contact@logiq-consulting.ch,
+            récupère ta clé d'accès, et colle-la ici à la place de "REMPLACER_PAR_TA_CLE_WEB3FORMS".
+          -->
+          <input type="hidden" name="access_key" value="REMPLACER_PAR_TA_CLE_WEB3FORMS" />
+          <input type="hidden" name="subject" value="Nouveau brief business plan — LogIQ Consulting" />
+          <input type="hidden" name="from_name" value="Site LogIQ Consulting" />
+          <input type="text" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Vos coordonnées</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fullname">Nom complet</label>
+                <input class="form-input" type="text" id="fullname" name="Nom complet" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">E-mail</label>
+                <input class="form-input" type="email" id="email" name="E-mail" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">Téléphone <span class="optional">(optionnel)</span></label>
+                <input class="form-input" type="tel" id="phone" name="Téléphone" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="projectname">Nom du projet / de l'entreprise</label>
+                <input class="form-input" type="text" id="projectname" name="Nom du projet" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Votre projet</legend>
+            <div class="form-group">
+              <label class="form-label" for="stage">Où en est le projet aujourd'hui ?</label>
+              <select class="form-select" id="stage" name="Stade du projet" required>
+                <option value="">Choisir…</option>
+                <option value="Idée">Encore au stade d'idée</option>
+                <option value="En préparation">En préparation, pas encore lancé</option>
+                <option value="Déjà lancé">Déjà lancé, en recherche de financement pour se développer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="description">Décrivez votre projet en quelques phrases</label>
+              <p class="form-hint">Quoi, pour qui, et comment vous comptez le réaliser.</p>
+              <textarea class="form-textarea" id="description" name="Description du projet" required></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sector">Secteur d'activité</label>
+                <input class="form-input" type="text" id="sector" name="Secteur d'activité" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="target">Clientèle visée</label>
+                <input class="form-input" type="text" id="target" name="Clientèle visée" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="competitors">Concurrents connus <span class="optional">(optionnel)</span></label>
+              <textarea class="form-textarea" id="competitors" name="Concurrents connus"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="businessmodel">Comment allez-vous générer du chiffre d'affaires ?</label>
+              <textarea class="form-textarea" id="businessmodel" name="Modèle économique" required></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Votre besoin de financement</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="amount">Montant recherché</label>
+                <input class="form-input" type="text" id="amount" name="Montant recherché" placeholder="ex. 50 000 CHF" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="recipient">Ce dossier est destiné à</label>
+                <select class="form-select" id="recipient" name="Destinataire du dossier" required>
+                  <option value="">Choisir…</option>
+                  <option value="Banque">Une banque</option>
+                  <option value="Investisseur privé">Un investisseur privé</option>
+                  <option value="Les deux">Les deux</option>
+                  <option value="Autre">Un autre organisme</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="usage">Utilisation prévue des fonds</label>
+              <textarea class="form-textarea" id="usage" name="Utilisation des fonds" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="figures">Chiffres déjà disponibles <span class="optional">(optionnel)</span></label>
+              <p class="form-hint">Chiffre d'affaires estimé, charges connues, apport personnel, etc.</p>
+              <textarea class="form-textarea" id="figures" name="Chiffres disponibles"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="deadline">Délai souhaité ou contrainte particulière <span class="optional">(optionnel)</span></label>
+              <input class="form-input" type="text" id="deadline" name="Délai souhaité" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="more">Informations complémentaires <span class="optional">(optionnel)</span></label>
+              <textarea class="form-textarea" id="more" name="Informations complémentaires"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-checkbox-row">
+            <input type="checkbox" id="consent" name="Consentement" value="Oui" required />
+            <label for="consent">
+              Je demande à bénéficier du service immédiatement dès l'envoi de ce formulaire et je déclare
+              avoir pris connaissance des <a href="cgv.html">Conditions générales de vente</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large btn-full" id="submitBtn">
+            Envoyer mon brief
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> LogIQ Consulting. Tous droits réservés.</p>
+      <p><a href="mailto:contact@logiq-consulting.ch">contact@logiq-consulting.ch</a> · <a href="cgv.html">CGV</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("briefForm");
+    const status = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi en cours…";
+      status.className = "form-status";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          form.hidden = true;
+          status.textContent = "Merci ! Votre brief a bien été reçu. Nous revenons vers vous sous 24 à 48h pour la suite.";
+          status.classList.add("is-visible", "success");
+        } else {
+          throw new Error(result.message || "Échec de l'envoi");
+        }
+      } catch (error) {
+        status.textContent = "Une erreur est survenue lors de l'envoi. Merci de réessayer, ou de nous écrire directement à contact@logiq-consulting.ch.";
+        status.classList.add("is-visible", "error");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer mon brief";
+      }
+    });
+  </script>
+</body>
+</html>

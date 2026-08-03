@@ -10,7 +10,9 @@ Tarification : offre de lancement à 250€ HT pendant le premier mois, puis
 ## Fichiers
 
 - `index.html` — page principale (hero, offre, tarif, FAQ, contact)
-- `merci.html` — page de confirmation après paiement
+- `merci.html` — page de confirmation après paiement, redirige vers `brief.html`
+- `brief.html` — formulaire de brief projet, envoyé par e-mail via Web3Forms
+- `cgv.html` — conditions générales de vente
 - `styles.css`, `script.js` — styles et interactions (menu mobile, FAQ en accordéon natif)
 
 ## Configurer le paiement Stripe (obligatoire avant mise en ligne)
@@ -24,6 +26,18 @@ Tarification : offre de lancement à 250€ HT pendant le premier mois, puis
 6. Ouvre `index.html`, cherche `REMPLACER_PAR_TON_LIEN` (dans la section Tarif) et remplace le `href` par ton URL.
 7. Crée un second Payment Link à **500€ HT** pour le tarif normal. À la fin du mois de lancement, remplace le
    lien du bouton par celui-ci, et mets à jour le texte "250€ HT" / la date dans la section Tarif de `index.html`.
+
+## Configurer le formulaire de brief (obligatoire avant mise en ligne)
+
+Le formulaire `brief.html` envoie ses réponses par e-mail via [Web3Forms](https://web3forms.com), un service
+gratuit qui ne demande pas de vrai compte (juste une adresse e-mail pour recevoir une clé d'accès).
+
+1. Va sur [web3forms.com](https://web3forms.com) et crée une clé d'accès avec `contact@logiq-consulting.ch`.
+2. Tu reçois la clé par e-mail (format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
+3. Ouvre `brief.html`, cherche `REMPLACER_PAR_TA_CLE_WEB3FORMS` et remplace-le par cette clé.
+4. Chaque soumission du formulaire t'arrive par e-mail à l'adresse utilisée pour créer la clé.
+
+Sans cette clé, le formulaire ne fonctionnera pas (les soumissions échoueront silencieusement côté Web3Forms).
 
 ## Mettre le site en ligne
 
