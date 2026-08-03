@@ -4,8 +4,8 @@ Site vitrine one-page pour la vente de business plans clé en main, avec
 paiement en ligne via Stripe Payment Links. HTML/CSS/JS statique, sans
 backend ni dépendances.
 
-Tarification : offre de lancement à 250 CHF HT pendant le premier mois, puis
-500 CHF HT (tarif normal).
+Tarification : offre de lancement à 270.– CHF TTC (TVA 8.1% incluse) pendant le premier mois, puis
+540.– CHF TTC (tarif normal).
 
 ## Fichiers
 
@@ -17,24 +17,22 @@ Tarification : offre de lancement à 250 CHF HT pendant le premier mois, puis
 
 ## Configurer le paiement Stripe (obligatoire avant mise en ligne)
 
-Le lien actuellement en ligne (`buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00`) est bien en **CHF**, montant 250.00 CHF.
-
-⚠️ **Il manque la TVA suisse (8.1 %) sur ce Payment Link** : le checkout affiche actuellement "Taxe : 0,00 CHF",
-alors que le site annonce "250 CHF **HT**" (donc TVA en plus). Deux options :
-
-- Dashboard Stripe → **Produits**, ouvre le prix associé à ce Payment Link, et attache un taux de taxe de
-  8.1 % (Paramètres → Fiscalité → Taux de taxe, à créer si pas déjà fait) ; ou
-- Si tu n'es pas encore effectivement assujetti à la TVA suisse (franchise en base), retire la mention "HT"
-  du site et des CGV et considère 250 CHF comme prix final TTC — vérifie ce point avec ton fiduciaire.
-
-Pour le second Payment Link (tarif normal) :
+⚠️ Le site affiche désormais des prix **TTC arrondis** (270.– / 540.– CHF), différents du lien Stripe actuel
+(`buy.stripe.com/eVq6oJ7ZH3sT4bz9992Ry00`) qui facture 250.00 CHF sans taxe. Il faut créer un nouveau Payment
+Link à 270 CHF pour que le montant facturé corresponde au prix annoncé.
 
 1. Dashboard Stripe → **Payment links** → **Create payment link**.
-2. Crée un produit "Business plan clé en main" à **500 CHF HT**, devise **CHF**, paiement unique, avec le même
-   taux de taxe 8.1 % attaché.
+2. Crée un produit "Business plan clé en main — offre de lancement" à **270 CHF**, devise **CHF**, paiement
+   unique. Si tu es effectivement assujetti à la TVA suisse, attache un taux de taxe de 8.1 % **en mode
+   "TVA incluse" (inclusive)** — Paramètres → Fiscalité → Taux de taxe — pour que 270 CHF reste le montant
+   total facturé (pas 270 + taxe en plus). Si tu n'es pas encore assujetti (franchise en base), ne mets pas
+   de taxe : 270 CHF est alors simplement le prix final.
 3. Configure la redirection après paiement vers `https://logiq-consulting.ch/merci.html` (onglet "After payment").
-4. À la fin du mois de lancement (après le 3 septembre 2026), remplace le lien du bouton dans `index.html` par
-   celui-ci, et mets à jour le texte "250 CHF HT" / la date dans la section Tarif.
+4. Copie l'URL générée, ouvre `index.html`, cherche `REMPLACER_PAR_TON_LIEN_270CHF` (section Tarif) et remplace
+   le `href` par cette URL.
+5. Fais la même chose pour le tarif normal à **540 CHF** (même logique de taxe incluse). À la fin du mois de
+   lancement (après le 3 septembre 2026), remplace le lien du bouton par celui-ci et mets à jour le texte
+   "270.– CHF" / la date dans la section Tarif.
 
 ## Configurer le formulaire de brief (obligatoire avant mise en ligne)
 
